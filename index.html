@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITI Student Smart Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>ITI Smart Card Generator</h2>
+            <p>Student ki details bharein, card apne aap ban jayega.</p>
+            
+            <form id="idForm">
+                <div class="form-group">
+                    <label for="inputName">Student Name</label>
+                    <input type="text" id="inputName" placeholder="ENTER YOUR NAME" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputTrade">Select Trade</label>
+                    <select id="inputTrade">
+                        <option value="Electrician">Electrician</option>
+                        <option value="Fitter">Fitter</option>
+                        <option value="COPA (Computer Operator)">COPA</option>
+                        <option value="Welder">Welder</option>
+                        <option value="Electronic Mechanic">Electronic Mechanic</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputRoll">Roll Number / Reg No.</label>
+                    <input type="text" id="inputRoll" placeholder="ENTER YOUR ROLL NUMBER" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputSession">Academic Session</label>
+                    <input type="text" id="inputSession" placeholder="2025-2026">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputBlood">Blood Group</label>
+                    <input type="text" id="inputBlood" value="O+" style="width: 80px;">
+                </div>
+                <div class="form-group">
+                   <label for="inputPhoto">Upload Student Photo</label>
+                   <input type="file" id="inputPhoto" accept="image/*">
+                </div>
+                <button type="button" class="btn" onclick="window.print()">Print / Download Card</button>
+            </form>
+        </div>
+
+        <div class="preview-container">
+            <div class="smart-card" id="idCard">
+                <div class="card-header">
+                    <h3>GOVT. INDUSTRIAL TRAINING INSTITUTE</h3>
+                    <h5>NARSINGHGARH (M.P.)</h5>
+                    <p>DIGITAL STUDENT SMART CARD</p>
+                </div>
+
+                <div class="card-body">
+                    <div class="card-left">
+                        <div class="profile-pic" id="photoPreview">
+                          <img id="studentImg" src="https://via.placeholder.com/150?text=No+Photo" alt="Student Photo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        </div>
+                        <div class="smart-chip"></div>
+                    </div>
+
+                    <div class="card-details">
+                        <div class="detail-field">
+                            <span class="label">NAME:</span>
+                            <span class="value" id="cardName">ENTER YOUR NAME</span>
+                        </div>
+                        <div class="detail-field">
+                            <span class="label">TRADE:</span>
+                            <span class="value" id="cardTrade">ENTER YOUR TRADE</span>
+                        </div>
+                        <div class="detail-field">
+                            <span class="label">ROLL NO:</span>
+                            <span class="value" id="cardRoll">ENTER YOUR ROLL NUMBER</span>
+                        </div>
+                        <div class="detail-field">
+                            <span class="label">SESSION:</span>
+                            <span class="value" id="cardSession">ENTER YOUR SESSION</span>
+                        </div>
+                        <div class="detail-field">
+                            <span class="label">BLOOD GR:</span>
+                            <span class="value" id="cardBlood">ENTER YOUR BLOOD GROUP</span>
+                        </div>
+                        </div>
+
+                    <div class="card-right">
+                        <div class="qr-holder">
+                            <img id="qrCode" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=Name:Rahul Kumar,Roll:ITI-2026-0854" alt="QR Code">
+                        </div>
+                        <span class="qr-text">SCAN TO VERIFY</span>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <span>STATUS: ACTIVE</span>
+                    <span class="secure-text">🔒 SECURE DIGITAL ID</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
